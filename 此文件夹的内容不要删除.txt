@@ -1,0 +1,108 @@
+此文件夹的内容不要删除，因为此文件夹的内容是传智播客关于mybatis-plus教程的示例程序，但e:/mp-demo/pom.xml的文件内容有所修改，修改成以下的内容：
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.0</version><!--此行要修改-->
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.itheima.mp</groupId>
+    <artifactId>mp-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>mp-demo</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>22</java.version><!--此行要修改-->
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId><!--此行要修改-->
+            <artifactId>mysql-connector-j</artifactId><!--此行要修改-->
+            <version>8.3.0</version><!--此行要修改-->
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version><!--此行要修改-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.5</version><!--此行要修改-->
+            <exclusions><!--此行要修改-->
+                <exclusion><!--此行要修改-->
+                    <groupId>org.mybatis</groupId><!--此行要修改-->
+                    <artifactId>mybatis-spring</artifactId><!--此行要修改-->
+                </exclusion><!--此行要修改-->
+            </exclusions><!--此行要修改-->
+        </dependency>
+        <dependency><!--此行要修改-->
+            <groupId>org.mybatis</groupId><!--此行要修改-->
+            <artifactId>mybatis-spring</artifactId><!--此行要修改-->
+            <version>3.0.3</version><!--此行要修改-->
+        </dependency><!--此行要修改-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.11</version>
+        </dependency>
+    </dependencies>
+</project>
+
+在后面标记<!--此行要修改-->就是要修改的行，主要修改内容是：下面的内容
+1.springboot版本是3.4.0
+<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.0</version><!--此行要修改-->
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+2.jdk版本是jdk22
+<description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>22</java.version><!--此行要修改-->
+    </properties>
+    <dependencies>
+
+3.mysql驱动库版本是8.3.0
+     <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+
+4.lombok版本是1.18.36
+<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+        </dependency>
+
+5.mybatisplus版本是3.5.5,mybatis-spring版本是3.0.3
+<dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.5</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mybatis</groupId>
+                    <artifactId>mybatis-spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
+
